@@ -1,0 +1,277 @@
+[
+  {
+    "No": 1,
+    "Nama Herbal": "Alamanda Daun",
+    "Nama Latin": "Allamandae Catharticae Folium"
+  },
+  {
+    "No": 2,
+    "Nama Herbal": "Akar Alang-Alang",
+    "Nama Latin": "Imperatae Cylindricae Radix"
+  },
+  {
+    "No": 3,
+    "Nama Herbal": "Pulpa Asam Jawa",
+    "Nama Latin": "Tamarindi Indicae Pulpa"
+  },
+  {
+    "No": 4,
+    "Nama Herbal": "Umbi Lapis Bawang Merah",
+    "Nama Latin": "Allii Cepae Bulbus"
+  },
+  {
+    "No": 5,
+    "Nama Herbal": "Buah Belimbing Manis",
+    "Nama Latin": "Averrhoae Carambolae Fructus"
+  },
+  {
+    "No": 6,
+    "Nama Herbal": "Daun Belimbing Manis",
+    "Nama Latin": "Averrhoae Carambolae Folium"
+  },
+  {
+    "No": 7,
+    "Nama Herbal": "Buah Belimbing Wuluh",
+    "Nama Latin": "Averrhoae Bilimbi Fructus"
+  },
+  {
+    "No": 8,
+    "Nama Herbal": "Daun Belimbing Wuluh",
+    "Nama Latin": "Averrhoae Bilimbi Folium"
+  },
+  {
+    "No": 9,
+    "Nama Herbal": "Buah Cabe Rawit",
+    "Nama Latin": "Capsici Frutescentis Fructus"
+  },
+  {
+    "No": 10,
+    "Nama Herbal": "Bunga Cengkeh",
+    "Nama Latin": "Syzygli Aromatici Flos"
+  },
+  {
+    "No": 11,
+    "Nama Herbal": "Daun Cengkeh",
+    "Nama Latin": "Syzygii Aromatici Folium"
+  },
+  {
+    "No": 12,
+    "Nama Herbal": "Daun Cincau",
+    "Nama Latin": "Cycleae Barbatae Folium"
+  },
+  {
+    "No": 13,
+    "Nama Herbal": "Daun Dadap Ayam",
+    "Nama Latin": "Erythrinae Variegatae Folium"
+  },
+  {
+    "No": 14,
+    "Nama Herbal": "Daun Dadap Serep",
+    "Nama Latin": "Erythrinae Subumbransis Folium"
+  },
+  {
+    "No": 15,
+    "Nama Herbal": "Daun Gandarusa",
+    "Nama Latin": "Justiciae Gendarussae Folium"
+  },
+  {
+    "No": 16,
+    "Nama Herbal": "Daun Jambu Air",
+    "Nama Latin": "Syzygii Aquei Folium"
+  },
+  {
+    "No": 17,
+    "Nama Herbal": "Daun Jarak Pagar",
+    "Nama Latin": "Jatrophae Curcasis Folium"
+  },
+  {
+    "No": 18,
+    "Nama Herbal": "Daun Jati",
+    "Nama Latin": "Tectonae Grandisidis Folium"
+  },
+  {
+    "No": 19,
+    "Nama Herbal": "Rimpang Jerangau",
+    "Nama Latin": "Acori Calami Rhizoma"
+  },
+  {
+    "No": 20,
+    "Nama Herbal": "Daun Jeruk Purut",
+    "Nama Latin": "Citri Hystridis Folium"
+  },
+  {
+    "No": 21,
+    "Nama Herbal": "Kulit Buah Jeruk Purut",
+    "Nama Latin": "Citri Hystridis Pericarpium"
+  },
+  {
+    "No": 22,
+    "Nama Herbal": "Biji Jinten Hitam",
+    "Nama Latin": "Nigellae Sativae Semen"
+  },
+  {
+    "No": 23,
+    "Nama Herbal": "Daun Kaca Piring",
+    "Nama Latin": "Gardeniae Jasminoidi Folium"
+  },
+  {
+    "No": 24,
+    "Nama Herbal": "Herba Kangkung Air",
+    "Nama Latin": "Ipomoeae Aquaticae Herba"
+  },
+  {
+    "No": 25,
+    "Nama Herbal": "Biji Kecipir",
+    "Nama Latin": "Psophocarpi Tetragonolobi Semen"
+  },
+  {
+    "No": 26,
+    "Nama Herbal": "Biji Kedawung",
+    "Nama Latin": "Parkiae Roxburghii Semen"
+  },
+  {
+    "No": 27,
+    "Nama Herbal": "Biji Kelabet",
+    "Nama Latin": "Trigonellae Foeni-graeci Semen"
+  },
+  {
+    "No": 28,
+    "Nama Herbal": "Daun Kembang Sepatu",
+    "Nama Latin": "Hibisci Rosae-sinensidis Folium"
+  },
+  {
+    "No": 29,
+    "Nama Herbal": "Daun Ketepeng",
+    "Nama Latin": "Cassiae Alatae Folium"
+  },
+  {
+    "No": 30,
+    "Nama Herbal": "Rimpang Kunir Putih",
+    "Nama Latin": "Kaempferiae Rotundae Rhizoma"
+  },
+  {
+    "No": 31,
+    "Nama Herbal": "Biji Labu",
+    "Nama Latin": "Cucurbitae Moschatae Semen"
+  },
+  {
+    "No": 32,
+    "Nama Herbal": "Daun Maja",
+    "Nama Latin": "Crescentiae Cujetei Folium"
+  },
+  {
+    "No": 33,
+    "Nama Herbal": "Daun Manggis",
+    "Nama Latin": "Garciniae Mangostanae Folium"
+  },
+  {
+    "No": 34,
+    "Nama Herbal": "Daun Melati",
+    "Nama Latin": "Jasmini Sambaci Folium"
+  },
+  {
+    "No": 35,
+    "Nama Herbal": "Daun Mentimun",
+    "Nama Latin": "Cucumidis Sativi Folium"
+  },
+  {
+    "No": 36,
+    "Nama Herbal": "Daun Miana",
+    "Nama Latin": "Plectranthi Scutellaroidi Folium"
+  },
+  {
+    "No": 37,
+    "Nama Herbal": "Daun Mimba",
+    "Nama Latin": "Azadirachtae Indicae Folium"
+  },
+  {
+    "No": 38,
+    "Nama Herbal": "Herba Menta",
+    "Nama Latin": "Menthae Arvensidis Herba"
+  },
+  {
+    "No": 39,
+    "Nama Herbal": "Kayu Nangka",
+    "Nama Latin": "Artocarpi Heterophylli Lignum"
+  },
+  {
+    "No": 40,
+    "Nama Herbal": "Daun Nilam",
+    "Nama Latin": "Pogostemonis Cablinis Folium"
+  },
+  {
+    "No": 41,
+    "Nama Herbal": "Daun Pandan",
+    "Nama Latin": "Pandani Amaryllifolii Folium"
+  },
+  {
+    "No": 42,
+    "Nama Herbal": "Daun Pare",
+    "Nama Latin": "Momordicae Charantiae Folium"
+  },
+  {
+    "No": 43,
+    "Nama Herbal": "Akar Pasak Bumi",
+    "Nama Latin": "Eurycomae Longifoliae Radix"
+  },
+  {
+    "No": 44,
+    "Nama Herbal": "Biji Pepaya",
+    "Nama Latin": "Caricae Papayae Semen"
+  },
+  {
+    "No": 45,
+    "Nama Herbal": "Daun Pepaya",
+    "Nama Latin": "Caricae Papayae Folium"
+  },
+  {
+    "No": 46,
+    "Nama Herbal": "Biji Petai Cina",
+    "Nama Latin": "Leucaenae Glaucae Semen"
+  },
+  {
+    "No": 47,
+    "Nama Herbal": "Herba Pulutan",
+    "Nama Latin": "Urenae Lobatae Herba"
+  },
+  {
+    "No": 48,
+    "Nama Herbal": "Daun Saga",
+    "Nama Latin": "Abri Precatorii Folium"
+  },
+  {
+    "No": 49,
+    "Nama Herbal": "Daun Sena",
+    "Nama Latin": "Sennae Alexandrinae Folium"
+  },
+  {
+    "No": 50,
+    "Nama Herbal": "Herba Stevia",
+    "Nama Latin": "Steviae Rebaudianae Herba"
+  },
+  {
+    "No": 51,
+    "Nama Herbal": "Daun Tanjung",
+    "Nama Latin": "Mimusopsis Elengii Folium"
+  },
+  {
+    "No": 52,
+    "Nama Herbal": "Akar Tapak Liman",
+    "Nama Latin": "Elephantopi Scaberis Radix"
+  },
+  {
+    "No": 53,
+    "Nama Herbal": "Bunga Turi",
+    "Nama Latin": "Sesbaniae Grandiflorae Flos"
+  },
+  {
+    "No": 54,
+    "Nama Herbal": "Daun Ubi Jalar",
+    "Nama Latin": "Ipomoeae Batatasae Folium"
+  },
+  {
+    "No": 55,
+    "Nama Herbal": "Herba Urang Aring",
+    "Nama Latin": "Ecliptae Prostratae Herb"
+  }
+]
