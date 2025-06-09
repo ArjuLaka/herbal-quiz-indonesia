@@ -5,7 +5,7 @@ import QuizCard from "./components/QuizCard";
 import Leaderboard from "./components/Leaderboard";
 import FeedbackOverlay from "./components/FeedbackOverlay";
 import InputAnswer from "./components/InputAnswer";
-import { HerbalItem, Question, LeaderboardEntry } from "./types";
+import { Question, LeaderboardEntry } from "./types";
 import { shuffleArray } from "./utils/shuffle";
 
 const formatTime = (seconds: number) => {
