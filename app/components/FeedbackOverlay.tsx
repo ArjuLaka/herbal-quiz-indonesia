@@ -14,7 +14,7 @@ const FeedbackOverlay = ({ isCorrect, delay, onFinish }: Props) => {
       setCountdown((c) => {
         if (c <= 1) {
           clearInterval(intervalId)
-          const finishTimeout = setTimeout(() => {
+          setTimeout(() => {
             onFinish()
           }, 0)
           return 0
