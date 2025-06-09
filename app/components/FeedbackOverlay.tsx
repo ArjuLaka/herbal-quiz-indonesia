@@ -10,30 +10,24 @@ const FeedbackOverlay = ({ isCorrect, delay, onFinish }: Props) => {
   const [countdown, setCountdown] = useState(delay);
 
   useEffect(() => {
-    const intervalId: NodeJS.Timeout;
-    let finishTimeout: NodeJS.Timeout;
-
-    intervalId = setInterval(() => {
+    const intervalId = setInterval(() => {
       setCountdown((c) => {
         if (c <= 1) {
-          clearInterval(intervalId);
-
-          // 💡 Delay `onFinish()` agar tidak dipanggil saat render berlangsung
-          finishTimeout = setTimeout(() => {
-            onFinish();
-          }, 0);
-
-          return 0;
+          clearInterval(intervalId)
+          const finishTimeout = setTimeout(() => {
+            onFinish()
+          }, 0)
+          return 0
         }
-        return c - 1;
-      });
-    }, 1000);
+        return c - 1
+      })
+    }, 1000)
 
     return () => {
-      clearInterval(intervalId);
-      clearTimeout(finishTimeout);
-    };
-  }, []);
+      clearInterval(intervalId)
+    }
+  }, [])
+
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
