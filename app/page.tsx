@@ -64,7 +64,7 @@ export default function Home() {
   const startQuiz = () => {
     setStarted(true);
     setScore(0);
-    setTimeLeft(210);
+    setTimeLeft(240);
     setGameOver(false);
 
     const initialIndex = 0;
@@ -155,7 +155,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-900 flex flex-col items-center p-4">
-      <h1 className="text-2xl font-bold mb-4">🌿 Kuis Herbal 3 Menit </ br>Dibuat oleh Arju Laka</h1>
+      <h1 className="text-2xl font-bold mb-4">🌿 Kuis Herbal 3 Menit <br />Dibuat oleh Arju Laka</h1>
       {!started ? (
         <div className="p-4 bg-gray-700 rounded shadow-md w-full max-w-md space-y-4">
           <label className="block">
