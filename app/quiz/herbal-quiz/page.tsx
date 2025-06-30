@@ -1,12 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
-import herbalData from "./data/herbalData.json";
-import QuizCard from "./components/QuizCard";
-import Leaderboard from "./components/Leaderboard";
-import FeedbackOverlay from "./components/FeedbackOverlay";
-import InputAnswer from "./components/InputAnswer";
-import { Question, LeaderboardEntry } from "./types";
-import { shuffleArray } from "./utils/shuffle";
+import herbalData from "../../data/herbalData.json";
+import QuizCard from "../../components/QuizCard";
+import Leaderboard from "../../components/Leaderboard";
+import FeedbackOverlay from "../../components/FeedbackOverlay";
+import InputAnswer from "../../components/InputAnswer";
+import { Question, LeaderboardEntry } from "../../types";
+import { shuffleArray } from "../../utils/shuffle";
 
 const formatTime = (seconds: number) => {
   const m = Math.floor(seconds / 60)
@@ -64,7 +64,7 @@ export default function Home() {
   const startQuiz = () => {
     setStarted(true);
     setScore(0);
-    setTimeLeft(300);
+    setTimeLeft(30);
     setGameOver(false);
 
     const initialIndex = 0;
@@ -108,41 +108,27 @@ export default function Home() {
     }
   };
 
+  const fetchLeaderboard = async () => {
+    const res = await fetch("/api/leaderboard");
+    const data = await res.json();
+    setHistory(data);
+  };
+
   useEffect(() => {
-    try {
-      const stored = localStorage.getItem("quiz_scores");
-      if (stored) {
-        const parsed = JSON.parse(stored);
-        if (Array.isArray(parsed)) {
-          const valid = parsed.filter(
-            (entry) =>
-              typeof entry === "object" && "name" in entry && "score" in entry
-          );
-          setHistory(valid);
-        } else {
-          setHistory([]);
-        }
-      } else {
-        setHistory([]);
-      }
-    } catch (e) {
-      console.error("Gagal membaca leaderboard:", e);
-      setHistory([]);
-      localStorage.removeItem("quiz_scores");
-    }
+    fetch("/api/leaderboard")
+      .then((res) => res.json())
+      .then((data) => setHistory(data));
   }, []);
 
   useEffect(() => {
     if (gameOver) {
-      const newEntry: LeaderboardEntry = {
-        name: playerName || "Anonim",
-        score,
-      };
-      const stored = localStorage.getItem("quiz_scores") || "[]";
-      const parsed: LeaderboardEntry[] = JSON.parse(stored);
-      const updated = [...parsed, newEntry];
-      setHistory(updated);
-      localStorage.setItem("quiz_scores", JSON.stringify(updated));
+      fetch("/api/leaderboard", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: playerName, score }),
+      }).then(() => {
+        fetchLeaderboard();
+      });
     }
   }, [gameOver]);
 
