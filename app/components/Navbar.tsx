@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
   const toggleMenu = () => setIsOpen((prev) => !prev);
 
   return (
-    <nav className="bg-gray-900 shadow-md fixed top-0 w-full z-50">
+    <nav className="bg-gray-950 shadow-md fixed top-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Mobile */}
         <div className="flex items-center justify-between h-16 md:hidden">
@@ -39,21 +39,30 @@ const Navbar: React.FC = () => {
           </Link>
 
           <div className="flex space-x-6 text-white">
-            <Link href="/" className="hover:text-blue-400 transition">
-              Home
+            <Link href="/search" className="hover:text-blue-400 transition">
+              Search
+            </Link>
+            <Link href="/contents" className="hover:text-blue-400 transition">
+              Contents
+            </Link>
+            <Link href="/news" className="hover:text-blue-400 transition">
+              News
+            </Link>
+            <Link href="/faq" className="hover:text-blue-400 transition">
+              FAQ
             </Link>
             <Link href="/about" className="hover:text-blue-400 transition">
               About
             </Link>
-            <Link href="/contact" className="hover:text-blue-400 transition">
-              Contact
+            <Link href="/settings" className="hover:text-blue-400 transition">
+              Settings
             </Link>
           </div>
 
           <div className="flex space-x-4">
             <Link
               href="/login"
-              className="text-sm font-medium hover:text-blue-400 transition"
+              className="text-sm font-medium bg-gray-500 text-white px-3 py-1 rounded hover:bg-blue-400 transition"
             >
               Login
             </Link>
@@ -71,24 +80,36 @@ const Navbar: React.FC = () => {
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
           isOpen
-            ? "max-h-60 opacity-100 scale-100"
+            ? "max-h-80 opacity-100 scale-100"
             : "max-h-0 opacity-0 scale-95"
-        } bg-gray-900 px-4`}
+        } bg-gray-950 px-4`}
       >
         <div className="flex flex-col py-2 space-y-2 text-white">
-          <Link href="/" className="hover:text-blue-400 transition">
-            Home
+          <Link href="/search" className="hover:text-blue-400 transition">
+            Search
+          </Link>
+          <Link href="/contents" className="hover:text-blue-400 transition">
+            Contents
+          </Link>
+          <Link href="/news" className="hover:text-blue-400 transition">
+            News
+          </Link>
+          <Link href="/faq" className="hover:text-blue-400 transition">
+            FAQ
           </Link>
           <Link href="/about" className="hover:text-blue-400 transition">
             About
           </Link>
-          <Link href="/contact" className="hover:text-blue-400 transition">
-            Contact
+          <Link href="/settings" className="hover:text-blue-400 transition">
+            Settings
           </Link>
 
           <hr className="my-2 border-gray-700" />
 
-          <Link href="/login" className="hover:text-blue-400 transition">
+          <Link
+            href="/login"
+            className="bg-gray-500 text-white text-center py-2 rounded hover:bg-blue-400 transition"
+          >
             Login
           </Link>
           <Link
