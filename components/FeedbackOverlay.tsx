@@ -10,10 +10,9 @@ const FeedbackOverlay = ({ isCorrect, delay, onFinish }: Props) => {
   const [countdown, setCountdown] = useState(delay);
 
   useEffect(() => {
-    let intervalId: NodeJS.Timeout;
     let finishTimeout: NodeJS.Timeout;
 
-    intervalId = setInterval(() => {
+    const intervalId = setInterval(() => {
       setCountdown((c) => {
         if (c <= 1) {
           clearInterval(intervalId);

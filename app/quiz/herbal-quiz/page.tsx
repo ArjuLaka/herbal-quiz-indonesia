@@ -1,12 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
-import herbalData from "../../data/herbalData.json";
-import QuizCard from "../../components/QuizCard";
-import Leaderboard from "../../components/Leaderboard";
-import FeedbackOverlay from "../../components/FeedbackOverlay";
-import InputAnswer from "../../components/InputAnswer";
-import { Question, LeaderboardEntry } from "../../types";
-import { shuffleArray } from "../../utils/shuffle";
+import herbalData from "../../../data/herbalData.json";
+import QuizCard from "../../../components/QuizCard";
+import Leaderboard from "../../../components/Leaderboard";
+import FeedbackOverlay from "../../../components/FeedbackOverlay";
+import InputAnswer from "../../../components/InputAnswer";
+import { Question, LeaderboardEntry } from "../../../types";
+import { shuffleArray } from "../../../utils/shuffle";
 
 const formatTime = (seconds: number) => {
   const m = Math.floor(seconds / 60)

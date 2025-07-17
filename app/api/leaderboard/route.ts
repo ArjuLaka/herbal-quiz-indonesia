@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { db } from "../../lib/db"
+import { db } from "../../../lib/db"
 
 export async function GET() {
   const [rows] = await db.query("SELECT name, score, created_at FROM leaderboard ORDER BY score DESC LIMIT 10")
