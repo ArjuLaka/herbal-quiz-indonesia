@@ -1,42 +1,36 @@
 // /app/api/articles/route.ts
-import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
+import type { NextRequest, NextFetchEvent } from 'next/server';
+import { createEdgeRouter } from 'next-connect';
 import multer from 'multer';
-import nextConnect from 'next-connect';
-import type { NextApiRequest, NextApiResponse } from 'next';
+import { prisma } from '@/lib/prisma';
+import { NextResponse } from 'next/server';
 
 const upload = multer({ dest: 'public/uploads/' });
 
-export const config = {
-  api: { bodyParser: false }, // disable default body parser for file upload
-};
+const router = createEdgeRouter<NextRequest, NextFetchEvent>();
 
-// Helper to convert route.ts into a handler-compatible file
-const handler = nextConnect<NextApiRequest, NextApiResponse>();
+router.use((req, res, next) =>
+  upload.single('cover')(req as any, res as any, next)
+);
 
-handler.use(upload.single('cover'));
+router.post(async (req: NextRequest) => {
+  const form = await req.formData();
+  const title = form.get('title')?.toString() || '';
+  const slug = form.get('slug')?.toString() || '';
+  const content = form.get('content')?.toString() || '';
+  const file = form.get('cover') as unknown as File;
 
-handler.post(async (req: any, res: any) => {
-  const { title, slug, content } = req.body;
-  const file = req.file;
-
-  const imageUrl = file ? `/uploads/${file.filename}` : null;
-
-  try {
-    const article = await prisma.article.create({
-      data: {
-        title,
-        slug,
-        content,
-        // store relative image URL
-        ...(imageUrl && { content: content.replace('{image}', `<Image src="${imageUrl}" width={600} height={400} />`) }),
-      },
-    });
-
-    res.status(201).json({ success: true, article });
-  } catch (error) {
-    res.status(500).json({ success: false, error });
+  let imageUrl = null;
+  if (file && file.name) {
+    // multer saved it
+    imageUrl = `/uploads/${(file as any).filename}`;
   }
+
+  const article = await prisma.article.create({
+    data: { title, slug, content },
+  });
+
+  return NextResponse.json({ success: true, article });
 });
 
-export default handler;
+export { router as GET, router as POST };
