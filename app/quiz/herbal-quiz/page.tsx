@@ -16,7 +16,7 @@ const formatTime = (seconds: number) => {
   return `${m}:${s}`;
 };
 
-export default function Home() {
+export default function HerbalQuiz() {
   const [question, setQuestion] = useState<Question | null>(null);
   const [score, setScore] = useState(0);
   const [history, setHistory] = useState<LeaderboardEntry[]>([]);

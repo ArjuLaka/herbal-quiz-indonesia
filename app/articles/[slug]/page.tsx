@@ -1,10 +1,12 @@
-import { prisma } from "@/lib/prisma";
-import { notFound } from "next/navigation";
-import { marked } from "marked";
+import { PrismaClient } from '@/lib/generated/prisma/client';
+import { notFound } from 'next/navigation';
+import { marked } from 'marked';
 
 type Props = {
-  params: { slug: string };
+  params: { slug: string }
 };
+
+const prisma = new PrismaClient();
 
 export default async function ArticlePage({ params }: Props) {
   const article = await prisma.article.findUnique({
@@ -13,27 +15,21 @@ export default async function ArticlePage({ params }: Props) {
 
   if (!article) return notFound();
 
-  const { title, content, createdAt } = article;
-
-  // Replace {image} with actual image tag
-  const html = marked.parse(
-    content.replace(
-      "{image}",
-      `<img src="/uploads/${params.slug}.jpg" alt="Cover image" class="my-4 w-full rounded-md shadow-md" />`
-    )
-  );
+  const html = marked.parse(article.content);
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-4">{title}</h1>
-      <p className="text-sm text-gray-500 mb-6">
-        Posted on {new Date(createdAt).toLocaleDateString()}
-      </p>
+    <div className="prose prose-lg max-w-3xl mx-auto py-8">
+      <h1>{article.title}</h1>
 
-      <article
-        className="prose prose-blue prose-lg max-w-none"
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      {article.image && (
+        <img
+          src={article.image}
+          alt={article.title}
+          className="rounded-xl shadow-md w-full my-4"
+        />
+      )}
+
+      <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   );
 }

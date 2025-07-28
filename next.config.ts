@@ -1,7 +1,8 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // Other config...
+  pageExtensions: ['ts', 'tsx', 'mdx'], // Add 'mdx'
 };
 
-export default nextConfig;
+const withMDX = require('@next/mdx')();
+module.exports = withMDX(nextConfig);
