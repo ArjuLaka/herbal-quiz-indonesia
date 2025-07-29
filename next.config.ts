@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Other config...
-  pageExtensions: ['ts', 'tsx', 'mdx'], // Add 'mdx'
+  pageExtensions: ['ts', 'tsx', 'mdx'],
 };
 
 const withMDX = require('@next/mdx')();

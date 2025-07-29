@@ -1,42 +1,41 @@
-import { NextResponse } from 'next/server'
-import { writeFile } from 'fs/promises'
-import path from 'path'
-import { PrismaClient } from '@/lib/generated/prisma/client'
-import { v4 as uuidv4 } from 'uuid'
+import { writeFile } from "fs/promises";
+import { join } from "path";
+import { v4 as uuidv4 } from "uuid";
+import { NextResponse } from "next/server";
+import { PrismaClient } from "@/lib/generated/prisma/client";
 
 const prisma = new PrismaClient();
 
 export async function POST(req: Request) {
-  const formData = await req.formData()
+  const formData = await req.formData();
+  const title = formData.get("title") as string;
+  const slug = formData.get("slug") as string;
+  let content = formData.get("content") as string;
 
-  const title = formData.get('title') as string
-  const slug = formData.get('slug') as string
-  const content = formData.get('content') as string
-  const image = formData.get('image') as File | null
+  const files = formData.getAll("images") as File[];
 
-  if (!title || !slug || !content) {
-    return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
+  // Loop through each image
+  for (const file of files) {
+    const bytes = await file.arrayBuffer();
+    const buffer = Buffer.from(bytes);
+    const uniqueName = `${uuidv4()}_${file.name}`;
+    const filePath = join(process.cwd(), "public/uploads", uniqueName);
+
+    await writeFile(filePath, buffer);
+
+    const originalFilename = file.name;
+    const publicPath = `/uploads/${uniqueName}`;
+    const regex = new RegExp(`\\]\\(${originalFilename}\\)`, "g");
+    content = content.replace(regex, `](${publicPath})`);
   }
 
-  let imagePath: string | null = null
-
-  if (image && image.size > 0) {
-    const buffer = Buffer.from(await image.arrayBuffer())
-    const filename = `${uuidv4()}_${image.name}`
-    const filepath = path.join(process.cwd(), 'public', 'uploads', filename)
-
-    await writeFile(filepath, buffer)
-    imagePath = `/uploads/${filename}`
-  }
-
-  const article = await prisma.article.create({
+  await prisma.article.create({
     data: {
       title,
       slug,
       content,
-      image: imagePath,
     },
-  })
+  });
 
-  return NextResponse.json({ success: true, article })
+  return NextResponse.json({ message: "Article uploaded successfully" });
 }
