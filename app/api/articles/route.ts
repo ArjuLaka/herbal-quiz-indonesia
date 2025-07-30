@@ -14,7 +14,6 @@ export async function POST(req: Request) {
 
   const files = formData.getAll("images") as File[];
 
-  // Loop through each image
   for (const file of files) {
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
@@ -37,5 +36,5 @@ export async function POST(req: Request) {
     },
   });
 
-  return NextResponse.json({ message: "Article uploaded successfully" });
+  return NextResponse.json({ slug: slug }, { status: 201 });
 }
